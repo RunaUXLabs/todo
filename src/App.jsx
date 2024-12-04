@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import TodoInput from './component/TodoInput';
 import TodoList from './component/TodoList';
 import styles from "./css/App.module.css";
+// 모듈 css를 가져오려면 객체에 싸매서 가져와야합니다.
 
 function App() {
   /**
