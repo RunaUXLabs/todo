@@ -1,10 +1,3 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css');
-/* 프리텐다드 폰트 */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 .app {
   text-align: center;
   display: flex;
@@ -12,4 +5,21 @@
   align-items: center;
   gap: 48px;
   margin: 40px 0 0 0;
+}
+.searchInput {
+  align-self: flex-end;
+  position: relative;
+}
+.searchInput > .ico {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translate(0, -50%);
+  color: #747bff;
+}
+.searchInput > input[type="search"] {
+  height: 40px;
+  border-radius: 4px;
+  padding: 8px 12px 8px 36px;
+  border: 1px solid #ddd;
 }
