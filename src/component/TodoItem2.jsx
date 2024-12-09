@@ -27,7 +27,6 @@ const TodoItem = ({ todo, updateTodo, toggleComplete, deleteTodo }) => {
     <li className={style.li}>
       {/* 체크박스 */}
       <Checkbox
-        type="checkbox"
         checked={todo.completed} // 완료여부 업데이트 해(상태값 반영)
         onChange={() => toggleComplete(todo.id)}
       />
@@ -56,7 +55,6 @@ const TodoItem = ({ todo, updateTodo, toggleComplete, deleteTodo }) => {
 
       {/* 삭제버튼 */}
       <button onClick={() => deleteTodo(todo.id)}>
-        {/* 삭제 */}
         <DeleteTwoTone />
       </button>
     </li>

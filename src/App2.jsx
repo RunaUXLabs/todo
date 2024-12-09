@@ -83,14 +83,27 @@ function App() {
 
 
   // 검색기능 구현하기
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(""); // 검색결과만 추릴 상태값 선언
   const filteredTodos = searchQuery
     ? todos.filter((todo) => todo.text.toLowerCase().includes(searchQuery.toLowerCase()))
     : todos;
+  // .toLowerCase()는 전부 소문자 처리하는 메서드 => 검색이 대소문자 구분안하고 광범위하게 되도록 만드는 과정
 
   return (
     <div className={styles.app}>
-      <h1>And Design 반영한<br />가벼운 React To-Do List</h1>
+      <h1>Ant Design 반영한<br />가벼운 React To-Do List</h1>
+
+      {/* 구글아이콘 샘플, span태그 안에 아이콘 고유명 작성 */}
+      {/* <span className="material-symbols-outlined">
+        expand_circle_down
+      </span>
+      <span className="material-symbols-outlined">
+        favorite
+      </span>
+      <span className="material-symbols-outlined">
+        sync_saved_locally
+      </span> */}
+
       <TodoInput addTodo={addTodo} />
       <TodoList
         todos={filteredTodos}
@@ -105,6 +118,7 @@ function App() {
         <SearchOutlined className={styles.ico} />
         <input
           type="search"
+          // type="text"로 안넣은 이유 => value를 감지하는 상태이므로 불필요한 텍스트 처리에 상태값이 민감하게 반영되는것을 막기위함, UX를 생각하여 type="search"로 검색어를 한번에 지우는 기능 반영
           placeholder="할 일을 검색할 수 있어요"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

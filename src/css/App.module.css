@@ -6,6 +6,8 @@
   gap: 48px;
   margin: 40px 0 0 0;
 }
+
+/* 검색창 안에 아이콘 넣기 */
 .searchInput {
   align-self: flex-end;
   position: relative;
